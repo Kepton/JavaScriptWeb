@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        var person = {};
+        Object.defineProperty(person, "Name", {
+            configurable: false,//是否可以通过delete删除属性
+            enumerable:false,//是否通过for-in循环返回结果
+            writable: false,//是否可以修改
+            value:"kepton"
+        });
+        person.Name = "kk";//非严格模式，赋值将被忽略，严格模式导致抛出异常；
+        alert(person.Name);//kepton
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
