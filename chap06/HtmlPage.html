@@ -14,6 +14,26 @@
         person.Name = "kk";//非严格模式，赋值将被忽略，严格模式导致抛出异常；
         alert(person.Name);//kepton
 
+        var book = {
+            _year: 2014,
+            edition:1
+        };
+
+        Object.defineProperty(book, "year", {
+            get: function () {
+                return this._year;
+            },
+            set:function(value) {
+                if (value > 2014)
+                {
+                    this.edition += 1;
+                }
+
+                }
+        })
+
+        book.year = 2017;
+        alert(book.edition);
     </script>
 </head>
 <body>
