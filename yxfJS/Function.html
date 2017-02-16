@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script>
+
+        var xiaoming = {
+            name: '小明',
+            birth: 1987,
+            age: function () {
+                var that = this;
+                function getAgeFromBirth()
+                {
+                    
+                    var y = new Date().getFullYear();
+                    return y - that.birth;
+                }
+                return getAgeFromBirth;
+            }
+        };
+
+        var  getage=xiaoming.age();
+       
+        //alert(getage());
+        //xiaoming.age(); // 今年调用是25,明年调用就变成26了
+
+
+        function getAge() {
+            var y = new Date().getFullYear();
+            return y - this.birth;
+        }
+
+        var lilei = {
+            name: '李磊',
+            birth: 1990,
+            age: getAge
+        };
+
+   
+        alert(getAge.apply(lilei, []));
+        alert(getAge.call(lilei));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

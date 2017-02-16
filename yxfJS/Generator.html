@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script>
+        function fib(max) {
+            var
+                t,
+                a = 0,
+                b = 1,
+                arr = [0, 1];
+            while (arr.length < max) {
+                t = a + b;
+                a = b;
+                b = t;
+                arr.push(t);
+            }
+            return arr;
+        }
+
+        // 测试:
+        alert(fib(5)); // [0, 1, 1, 2, 3]
+        alert(fib(10)); // [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+
+        function* fibs(max) {
+            var
+                t,
+                a = 0,
+                b = 1,
+                n = 1;
+            while (n < max) {
+                yield a;
+                t = a + b;
+                a = b;
+                b = t;
+                n ++;
+            }
+            return a;
+        }
+        var f = fibs(5);
+        alert(f.next().value); // {value: 0, done: false}
+        f.next(); // {value: 1, done: false}
+        f.next(); // {value: 1, done: false}
+        f.next(); // {value: 2, done: false}
+        f.next(); // {value: 3, done: true}
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

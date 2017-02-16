@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script>
+        var Student = {
+            name: 'Robot',
+            height: 1.2,
+            run: function () {
+                alert(this.name + ' is running...');
+            }
+        };
+
+        var xiaoming = {
+            name: '小明'
+        };
+
+        xiaoming.__proto__= Student;
+
+        alert(xiaoming.height); // '小明'
+        xiaoming.run(); // 小明 is running...
+    </script>
+</head>
+<body>
+
+</body>
+</html>
